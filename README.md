@@ -35,16 +35,17 @@ These exercises provided practical experience in understanding how reconnaissanc
 ## 🎯 Objectives
 
 The main objectives of this project are to:
-
 - Perform DNS lookups and identify domain IP addresses.
 - Identify web technologies using WhatWeb.
 - Inspect HTTP response headers using cURL.
-- Enumerate DNS information using Dig.
+- Enumerate DNS information using dnsrecon.
+- Gather publicly available information using theHarvester.
+- Perform OSINT and investigate relationships using Maltego.
 - Understand the information exposed by web infrastructure.
 - Discover active devices within a local network.
-- Identify open ports using Zenmap.
-- Practice network reconnaissance using Kali Linux tools.
+- Perform network scanning using Zenmap.
 
+Practice network reconnaissance using Kali Linux tools.
 ---
 
 ## 🛡️ Purpose of the Project
@@ -58,8 +59,7 @@ This project focuses on developing practical skills in:
 - HTTP Header Analysis
 - Information Gathering
 - Network Host Discovery
-- Port Scanning
-- Network Mapping
+- netwok Scanning
 
 ⚠️ **Important:** All scanning and testing activities must be performed only against systems and networks that you own or have explicit authorization to assess.
 
@@ -73,11 +73,11 @@ This project focuses on developing practical skills in:
 | Nslookup | DNS lookup and IP resolution |
 | WhatWeb | Web technology fingerprinting |
 | cURL | HTTP header inspection |
-| Dig | DNS information enumeration |
+| dnsrecon | DNS information enumeration |
 | Zenmap | Network scanning and visualization |
 | Nmap | Host discovery and port scanning |
-
----
+| Maltego | OSINT investigation and relationship mapping |
+| theHarvester | Public information gathering and email/subdomain enumeration |
 
 # 🪜 Practical Implementation
 
@@ -102,10 +102,7 @@ nslookup networkwalks.com
 Successfully resolved the domain name to its corresponding IP address.
 
 **Screenshot:**
-
-<p align="center">
-  <img src="nslookup.png" width="850" alt="Nslookup DNS lookup results">
-</p>
+  ![Nslookup DNS lookup results](nslookup.PNG)
 
 **Key Concept:**
 
@@ -130,10 +127,8 @@ whatweb networkwalks.com
 Identified information about the web server technologies and Content Management System (CMS) used by the website.
 
 **Screenshot:**
+    ![WhatWeb technology fingerprinting results](wwebss.PNG)
 
-<p align="center">
-  <img src="wwebss.png" width="850" alt="WhatWeb technology fingerprinting results">
-</p>
 
 **Key Concept:**
 
@@ -158,11 +153,7 @@ curl -I https://networkwalks.com
 Retrieved the HTTP response headers and checked the server response status and available header information.
 
 **Screenshot:**
-
-<p align="center">
-  <img src="curl-i.png" width="850" alt="cURL HTTP response headers">
-</p>
-
+ ![CURL HTTP response headers](curl-i.PNG)
 **Key Concept:**
 
 HTTP headers can reveal useful information about server behavior, response configuration, and potentially exposed technologies.
@@ -171,14 +162,14 @@ HTTP headers can reveal useful information about server behavior, response confi
 
 ### 4. DNS Records Enumeration (Dig)
 
-**Tool:** Dig
+**Tool:** dnsrecon -d
 
-The `dig` command was used to query DNS information associated with the target domain.
+The `dnsrecon -d` command was used to query DNS information associated with the target domain.
 
 **Command:**
 
 ```bash
-dig networkwalks.com ANY
+dnsrecon -d networkwalks.com
 ```
 
 **Result:**
@@ -186,17 +177,57 @@ dig networkwalks.com ANY
 Queried the DNS server for available DNS record information associated with the domain.
 
 **Screenshot:**
-
-<p align="center">
-  <img src="dnsrconss.png" width="850" alt="Dig DNS enumeration results">
-</p>
+ ![DNS enumeration results](dnsrconss.PNG)
 
 **Key Concept:**
 
 DNS enumeration helps security professionals understand domain configuration and gather information about the target's DNS infrastructure.
-
 ---
+### 5. Information Gathering & Email Enumeration (theHarvester)
 
+**Tool:** theHarvester
+The theHarvester tool was used to gather publicly available information associated with the target domain, including email addresses, subdomains, hostnames, and other relevant information.
+**Command:**
+
+```bash
+theHarvester -d networkwalks.com -b all
+```
+
+**Result:**
+
+Collected publicly available information associated with the target domain to identify potential email addresses, subdomains, and related infrastructure.
+
+**Screenshot:**
+ ![theHarvestor results](theHarvestorss.PNG)
+
+**Key Concept:**
+
+theHarvester is an OSINT tool used by security professionals during the reconnaissance phase to collect publicly available information about a target organization or domain.
+---
+### 6. Maltego — Information Gathering & Email Reconnaissance
+
+**Tool:** Maltego
+Maltego was used to perform OSINT-based reconnaissance and investigate relationships between publicly available information associated with a target email address..
+**Method:**
+
+```bash
+Created a new Maltego investigation.
+Added the target email address as an entity.
+Executed relevant transforms to gather associated information.
+Analyzed the results to identify relationships and connected entities.
+```
+
+**Result:**
+
+The investigation returned information related to the target email address and its associated digital footprint.
+
+**Screenshot:**
+ ![Maltego results](Maltigoss2.PNG)
+
+**Key Concept:**
+
+Maltego helps security professionals perform OSINT investigations by discovering and visualizing relationships between entities such as email addresses, domains, people, IP addresses, and websites.
+---
 ## Module W2-PM5: Network Scanning with Zenmap
 
 This module focused on discovering active devices and identifying open ports within the local area network (LAN).
@@ -209,8 +240,8 @@ This module focused on discovering active devices and identifying open ports wit
 |---|---|
 | Target Scope | Local Area Network (LAN) |
 | Scanning Tool | Zenmap |
-| Scan Types | Intense Scan / Ping Scan |
-| Main Objective | Host Discovery & Port Identification |
+| Scan Types |Ping Scan |
+| Main Objective | Host Discovery |
 
 ### Scanning Procedure
 
@@ -227,9 +258,7 @@ The local network was successfully scanned, and active devices connected to the 
 The scan also helped identify open ports on the discovered devices.
 
 **Screenshot:**
-<p align="center">
-  <img src="nmapss2.png" width="850" alt="Dig DNS enumeration results">
-</p>
+ ![nmap results](nmapss2.PNG)
 **Key Concept:**
 
 Network scanning helps security professionals map network environments, discover active hosts, and identify accessible services.
@@ -241,13 +270,22 @@ Network scanning helps security professionals map network environments, discover
 The following table summarizes the activities performed during the practical exercises:
 
 | 🔍 Activity | 🛠️ Tool | ✅ Result |
-|---|---|---|
-| DNS Lookup | Nslookup | Domain resolved to an IP address |
-| Technology Fingerprinting | WhatWeb | Web technologies and CMS identified |
-| HTTP Header Inspection | cURL | HTTP response headers retrieved |
-| DNS Enumeration | Dig | DNS information queried |
-| Host Discovery | Zenmap | Active local network devices identified |
-| Port Scanning | Zenmap | Open ports identified |
+1. Information Gathering & OSINT
+Activity	Tool	Result
+DNS Lookup	Nslookup	Domain resolved to an IP address
+DNS Enumeration	dnsrecon	DNS records and domain information queried
+Email & Subdomain Enumeration	theHarvester	Publicly available email addresses, subdomains, and host information gathered
+OSINT & Email Reconnaissance	Maltego	Relationships and information associated with the target email address identified
+
+2. Web Reconnaissance
+Activity	Tool	Result
+Technology Fingerprinting	WhatWeb	Web technologies and CMS identified
+HTTP Header Inspection	cURL	HTTP response headers retrieved
+
+3. Network Scanning & Discovery
+Activity	Tool	Result
+Host Discovery	Zenmap	Active local network devices identified
+Port Scanning	Zenmap	Open ports identified
 
 ---
 
