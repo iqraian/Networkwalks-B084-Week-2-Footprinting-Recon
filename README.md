@@ -13,6 +13,8 @@
 </p>
 
 ---
+## Disclaimer
+I have performed these activities only on the systems & devices where I had secured written permission or the devices/ systems that I own myself. All these materials are for education and research purpose only. Do not use anything from here to break the law. The authors is not responsible for what you do with this knowledge. Every action you take is your own responsibility. Misuse can lead to criminal charges, heavy fines. In most countries unauthorised access is a crime even when nothing is damaged.
 
 ## 📌 Project Overview
 
