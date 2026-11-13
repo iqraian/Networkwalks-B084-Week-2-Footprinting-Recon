@@ -102,7 +102,7 @@ nslookup networkwalks.com
 Successfully resolved the domain name to its corresponding IP address.
 
 **Screenshot:**
-  ![Nslookup DNS lookup results](nslookup.PNG)
+  ![Nslookup DNS lookup results](nslookup.png)
 
 **Key Concept:**
 
@@ -127,7 +127,7 @@ whatweb networkwalks.com
 Identified information about the web server technologies and Content Management System (CMS) used by the website.
 
 **Screenshot:**
-    ![WhatWeb technology fingerprinting results](wwebss.PNG)
+    ![WhatWeb technology fingerprinting results](wwebss.png)
 
 
 **Key Concept:**
@@ -198,7 +198,7 @@ theHarvester -d networkwalks.com -b all
 Collected publicly available information associated with the target domain to identify potential email addresses, subdomains, and related infrastructure.
 
 **Screenshot:**
- ![theHarvestor results](theHarvestorss.PNG)
+ ![theHarvestor results](theharvestor.png)
 
 **Key Concept:**
 
@@ -222,7 +222,7 @@ Analyzed the results to identify relationships and connected entities.
 The investigation returned information related to the target email address and its associated digital footprint.
 
 **Screenshot:**
- ![Maltego results](Maltigoss2.PNG)
+ ![Maltego results](Maltego.png)
 
 **Key Concept:**
 
@@ -258,7 +258,7 @@ The local network was successfully scanned, and active devices connected to the 
 The scan also helped identify open ports on the discovered devices.
 
 **Screenshot:**
- ![nmap results](nmapss2.PNG)
+ ![nmap results](nmap.png)
 **Key Concept:**
 
 Network scanning helps security professionals map network environments, discover active hosts, and identify accessible services.
