@@ -104,7 +104,7 @@ Successfully resolved the domain name to its corresponding IP address.
 **Screenshot:**
 
 <p align="center">
-  <img src="01-nslookup.png" width="850" alt="Nslookup DNS lookup results">
+  <img src="nslookup.png" width="850" alt="Nslookup DNS lookup results">
 </p>
 
 **Key Concept:**
@@ -132,7 +132,7 @@ Identified information about the web server technologies and Content Management 
 **Screenshot:**
 
 <p align="center">
-  <img src="02-whatweb.png" width="850" alt="WhatWeb technology fingerprinting results">
+  <img src="wwebss.png" width="850" alt="WhatWeb technology fingerprinting results">
 </p>
 
 **Key Concept:**
@@ -160,7 +160,7 @@ Retrieved the HTTP response headers and checked the server response status and a
 **Screenshot:**
 
 <p align="center">
-  <img src="03-curl.png" width="850" alt="cURL HTTP response headers">
+  <img src="curl-i.png" width="850" alt="cURL HTTP response headers">
 </p>
 
 **Key Concept:**
@@ -188,7 +188,7 @@ Queried the DNS server for available DNS record information associated with the 
 **Screenshot:**
 
 <p align="center">
-  <img src="04-dig.png" width="850" alt="Dig DNS enumeration results">
+  <img src="dnsrconss.png" width="850" alt="Dig DNS enumeration results">
 </p>
 
 **Key Concept:**
@@ -214,7 +214,7 @@ This module focused on discovering active devices and identifying open ports wit
 
 ### Scanning Procedure
 
-1. Opened Zenmap in Kali Linux.
+1. Install and opened Zenmap.
 2. Specified the local network as the scan target.
 3. Selected the appropriate scanning profile.
 4. Executed the scan to discover active devices.
@@ -227,8 +227,9 @@ The local network was successfully scanned, and active devices connected to the 
 The scan also helped identify open ports on the discovered devices.
 
 **Screenshot:**
-
-
+<p align="center">
+  <img src="nmapss2.png" width="850" alt="Dig DNS enumeration results">
+</p>
 **Key Concept:**
 
 Network scanning helps security professionals map network environments, discover active hosts, and identify accessible services.
